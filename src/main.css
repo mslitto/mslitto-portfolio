@@ -34,7 +34,7 @@ h1
 h2
   font-size 2.2em
   font-weight normal
-  letter-spacing .09em
+  /* letter-spacing .09em */
   margin .5em $padding-side .2em
   padding 0 0 .2em
   border-bottom 1px solid #666
