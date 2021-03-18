@@ -50,7 +50,7 @@ const cl = {
       e.className = e.className.replace(c, '').trim()
     }
   },
-  toggle: (e, c) => {
+  toggle(e, c) {
     if (cl.has(e, c)) {
       cl.rm(e, c)
     } else {
@@ -67,8 +67,10 @@ const on = (ele, listener, cb) => {
 
 // resize and reposition after load of images
 const onload = par => e => {
-  if (cl.has(e.target, 'bg')) {
-    const tar = e.target
+  const parent = e.target.parentNode
+
+  if (cl.has(parent, 'bg')) {
+    const tar = parent
     let width = tar.getBoundingClientRect().width
     let height = tar.getBoundingClientRect().height
     let left = 0
@@ -119,7 +121,7 @@ forEach(drag, draggable => {
   draggable.style.top = pos.top
 
   const img = $('.bg', draggable)[0]
-  on(img, 'load', onload(draggable))
+  on(img.children[0], 'load', onload(draggable))
 })
 
 const touchHandler = (event) => {
@@ -285,7 +287,6 @@ if (menuContainer) {
 }
 
 // About page
-
 const trigger = $('.about-page-trigger')[0]
 
 if (trigger) {
