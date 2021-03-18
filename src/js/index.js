@@ -65,12 +65,14 @@ const on = (ele, listener, cb) => {
   }
 }
 
-// resize and reposition after load of images
-const onload = par => e => {
-  const parent = e.target.parentNode
+const getPos = e => parseInt(e.replace('%', ''))
 
-  if (cl.has(parent, 'bg')) {
-    const tar = parent
+const percentFromPixels = (dir, px) => (px / W[`inner${dir}`]) * 100
+const pixelsFromPercent = (dir, pc) => (pc * W[`inner${dir}`]) / 100
+
+// resize and reposition after load of images
+const loadListener = (par, tar) => {
+  if (cl.has(tar, 'bg')) {
     let width = tar.getBoundingClientRect().width
     let height = tar.getBoundingClientRect().height
     let left = 0
@@ -121,7 +123,15 @@ forEach(drag, draggable => {
   draggable.style.top = pos.top
 
   const img = $('.bg', draggable)[0]
-  on(img.children[0], 'load', onload(draggable))
+  const imgSrc = $('img', img)[0]
+
+  if (!imgSrc.complete) {
+    on(imgSrc, 'load', () => {
+      loadListener(draggable, imgSrc.parentNode)
+    })
+  } else {
+    loadListener(draggable, imgSrc.parentNode)
+  }
 })
 
 const touchHandler = (event) => {
@@ -153,11 +163,6 @@ const doNothing = (e) => {
   e.preventDefault()
   return false
 }
-
-const getPos = e => parseInt(e.replace('%', ''))
-
-const percentFromPixels = (dir, px) => (px / W[`inner${dir}`]) * 100
-const pixelsFromPercent = (dir, pc) => (pc * W[`inner${dir}`]) / 100
 
 const isOutOfBounds = e => (
   e.clientX >= W.innerWidth ||
