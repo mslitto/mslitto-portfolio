@@ -71,7 +71,7 @@ const percentFromPixels = (dir, px) => (px / W[`inner${dir}`]) * 100
 const pixelsFromPercent = (dir, pc) => (pc * W[`inner${dir}`]) / 100
 
 // resize and reposition after load of images
-const loadListener = (par, tar) => {
+const onLoad = (par, tar) => {
   if (cl.has(tar, 'bg')) {
     let width = tar.getBoundingClientRect().width
     let height = tar.getBoundingClientRect().height
@@ -127,10 +127,10 @@ forEach(drag, draggable => {
 
   if (!imgSrc.complete) {
     on(imgSrc, 'load', () => {
-      loadListener(draggable, imgSrc.parentNode)
+      onLoad(draggable, imgSrc.parentNode)
     })
   } else {
-    loadListener(draggable, imgSrc.parentNode)
+    onLoad(draggable, imgSrc.parentNode)
   }
 })
 
