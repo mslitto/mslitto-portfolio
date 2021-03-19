@@ -11,48 +11,28 @@
   <block name="content">
     <div id="draggables">
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="http://illu.litto.work/" target="littography">
-          <mixin name="link"></mixin>
-        </a>
+      <include src="drag.html" locals='{ 
+        "href": "https://illu.litto.work",
+        "src": "{{ DIR }}img/littography.gif"
+      }'></include>
 
-        <picture class="bg">
-          <img src="{{ DIR }}img/littography.gif">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{ 
+        "src": "{{ DIR }}img/litto_cyber.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <picture class="bg">
-          <img src="{{ DIR }}img/litto_cyber.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{ 
+        "src": "{{ DIR }}img/litto_daredevil.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <picture class="bg">
-          <img src="{{ DIR }}img/litto_daredevil.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{ 
+        "href": "https://www.facebook.com/hometownberlin/videos/297655334350951/",
+        "src": "{{ DIR }}img/litto_laberlampe.gif"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="https://www.facebook.com/hometownberlin/videos/297655334350951/" target="_blank"
-          rel="noopener nofollow">
-          <mixin name="link"></mixin>
-        </a>
-
-        <picture class="bg">
-          <img src="{{ DIR }}img/litto_laberlampe.gif">
-        </picture>
-      </div>
-
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="https://issuu.com/ssiew/docs/diplom_2005_2013_2" target="_blank" rel="noopener nofollow">
-          <mixin name="link"></mixin>
-        </a>
-
-        <picture class="bg">
-          <img src="{{ DIR }}img/litlitto_rushsyndromtography.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "href": "https://issuu.com/ssiew/docs/diplom_2005_2013_2", 
+        "src": "{{ DIR }}img/litto_rushsyndrom.jpg"
+      }'></include>
 
     </div>
   </block>

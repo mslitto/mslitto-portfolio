@@ -7,7 +7,7 @@
 
   <if condition="typeof src !== 'undefined'">
     <picture class="{{ typeof classList !== 'undefined' ? classList : 'bg' }}">
-      <!-- <source srcset="{{ typeof src === 'string' ? src.replace(/\.(jpg|png|gif)$/, '.webp') : '' }}"> -->
+      <source srcset="{{ typeof src === 'string' ? src.replace(/\.(jpg|png|gif)$/, '.webp') : '' }}">
       <img src="{{ src }}" />
     </picture>
   </if>

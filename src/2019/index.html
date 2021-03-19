@@ -10,108 +10,68 @@
   </block>
   <block name="content">
     <div id="draggables">
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="{{ WEB_ROOT }}2019/infographic/">
-          <mixin name="link"></mixin>
-        </a>
-        <picture class="bg">
-          <img src="{{ WEB_ROOT }}2019/img/infographic.jpg">
-        </picture>
-      </div>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="{{ WEB_ROOT }}2019/distinctRealities/">
-          <mixin name="link"></mixin>
-        </a>
+      <include src="drag.html" locals='{
+        "href": "{{ WEB_ROOT }}2019/infographic/",
+        "src": "{{ DIR }}img/infographic.jpg"
+      }'></include>
 
-        <picture class="bg">
-          <img src="{{ WEB_ROOT }}2019/img/distinctRealities.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "href": "{{ WEB_ROOT }}2019/distinctRealities/",
+        "src": "{{ DIR }}img/distinctRealities.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <picture class="bg bg2">
+      <include src="drag.html" locals='{
+        "classList": "bg bg2",
+        "src": "{{ DIR }}img/digitalskizze_01.jpg"
+      }'></include>
 
-          <img src="{{ WEB_ROOT }}2019/img/digitalskizze_01.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "classList": "bg bg2",
+        "href": "http://onpublicgallery.net/?phort_post=djerba-tun-23-08-01-09-2019",
+        "src": "{{ DIR }}img/onenight.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="http://onpublicgallery.net/?phort_post=djerba-tun-23-08-01-09-2019" target="_blank">
-          <mixin name="link"></mixin>
-        </a>
-        <picture class="bg bg2">
-          <img src="{{ WEB_ROOT }}2019/img/onenight.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "href": "{{ WEB_ROOT }}2019/type_I/",
+        "src": "{{ DIR }}img/type_I_pic.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="{{ WEB_ROOT }}2019/type_I/">
-          <mixin name="link"></mixin>
-        </a>
-        <picture class="bg">
-          <img src="{{ WEB_ROOT }}2019/img/type_I_pic.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "href": "{{ WEB_ROOT }}2019/vorspiel/",
+        "src": "{{ DIR }}img/vorspiel.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="{{ WEB_ROOT }}2019/vorspiel/">
-          <mixin name="link"></mixin>
-        </a>
-        <picture class="bg">
-          <img src="{{ WEB_ROOT }}2019/img/vorspiel.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "href": "{{ WEB_ROOT }}2019/type_III/",
+        "src": "{{ DIR }}img/type_III.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="{{ WEB_ROOT }}2019/type_III/">
-          <mixin name="link"></mixin>
-        </a>
+      <include src="drag.html" locals='{
+        "classList": "bg bg2",
+        "src": "{{ DIR }}img/robohead.jpg"
+      }'></include>
 
-        <picture class="bg">
-          <img src="{{ WEB_ROOT }}2019/img/type_III.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "href": "{{ WEB_ROOT }}2019/realMirror/",
+        "src": "{{ DIR }}img/realmirror2_0.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <picture class="bg bg2">
-          <img src="{{ WEB_ROOT }}2019/img/robohead.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "classList": "bg bg2",
+        "src": "{{ DIR }}img/sissi.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="{{ WEB_ROOT }}2019/realMirror/">
-          <mixin name="link"></mixin>
-        </a>
+      <include src="drag.html" locals='{
+        "classList": "bg bg2",
+        "href": "{{ WEB_ROOT }}xxxx/",
+        "src": "{{ DIR }}img/mouse.gif"
+      }'></include>
 
-        <picture class="bg">
-          <img src="{{ WEB_ROOT }}2019/img/realmirror2_0.jpg">
-        </picture>
-      </div>
-
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <picture class="bg bg2">
-          <img src="{{ WEB_ROOT }}2019/img/sissi.jpg">
-        </picture>
-      </div>
-
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="{{ WEB_ROOT }}xxxx/">
-          <mixin name="link"></mixin>
-        </a>
-        <picture class="bg bg2">
-          <img src="{{ WEB_ROOT }}img/mouse.gif">
-        </picture>
-      </div>
-
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="{{ WEB_ROOT }}2019/kostprobe/">
-          <mixin name="link"></mixin>
-        </a>
-        <picture class="bg">
-          <img src="{{ WEB_ROOT }}2019/img/IMG_9002_small.png">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "href": "{{ WEB_ROOT }}2019/kostprobe/",
+        "src": "{{ DIR }}img/IMG_9002_small.png"
+      }'></include>
 
     </div>
   </block>
