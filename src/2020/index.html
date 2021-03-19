@@ -11,51 +11,35 @@
   <block name="content">
     <div id="draggables">
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <picture class="bg bg2">
-          <img src="{{ WEB_ROOT }}2020/img/03_2.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "classList": "bg bg2",
+        "src": "{{ DIR }}img/03_2.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <picture class="bg bg2">
-          <img src="{{ WEB_ROOT }}2020/img/05.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "classList": "bg bg2",
+        "src": "{{ DIR }}img/05.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <picture class="bg bg2">
-          <img src="{{ WEB_ROOT }}2020/img/06.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "classList": "bg bg2",
+        "src": "{{ DIR }}img/06.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="https://thesystem.at/yppenplatz5/#fake-mirror" target="_blank" rel="nofollow noopener noreferrer">
-          <mixin name="link"></mixin>
-        </a>
-        <picture class="bg">
-          <img src="{{ WEB_ROOT }}2020/img/hrlitto_performance.png">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "href": "https://thesystem.at/#fake-mirror"
+        "src": "{{ DIR }}img/hrlitto_performance.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="https://thesystem.at" target="_blank" rel="nofollow noopener noreferrer">
-          <mixin name="link"></mixin>
-        </a>
-        <picture class="bg">
-          <img src="{{ WEB_ROOT }}2020/img/thesystem.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "href": "https://thesystem.at/"
+        "src": "{{ DIR }}img/thesystem.jpg"
+      }'></include>
 
-      <div class="drag" style="position: absolute; left: -100%; top: -100%;">
-        <a href="{{ WEB_ROOT }}2020/type_II/">
-          <mixin name="link"></mixin>
-        </a>
-
-        <picture class="bg">
-          <img src="{{ WEB_ROOT }}2020/type_II/img/type2_3.jpg">
-        </picture>
-      </div>
+      <include src="drag.html" locals='{
+        "href": "{{ WEB_ROOT }}2020/type_II/",
+        "src": "{{ DIR }}type_II/img/type2_3.jpg"
+      }'></include>
 
     </div>
   </block>
