@@ -31,9 +31,9 @@
     "dev": "mspg build serve watch"
   },
   "devDependencies": {
-    "@mspg/core": "github:mspg/core#mjs",
-    "@mspg/transpile-babel": "github:mspg/transpile-babel#mjs",
-    "@mspg/transpile-posthtml": "github:mspg/transpile-posthtml#mjs",
-    "@mspg/transpile-stylus": "github:mspg/transpile-stylus#mjs"
+    "@mspg/core": "github:mspg/core",
+    "@mspg/transpile-babel": "github:mspg/transpile-babel",
+    "@mspg/transpile-posthtml": "github:mspg/transpile-posthtml",
+    "@mspg/transpile-stylus": "github:mspg/transpile-stylus"
   }
 }
