@@ -6,7 +6,8 @@
   <block name="content">
     <div id="error404">404 - not found</div>
     <script>
-      window.location.href !== '/' && window.location.href = '/' 
+      if (window.location.href !== '/')
+        window.location.href = '/'
     </script>
   </block>
 </extends>
