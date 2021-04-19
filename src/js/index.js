@@ -286,9 +286,19 @@ if (menuContainer) {
 
 // About page Toggler
 const t = $('.about-page-trigger')[0]
+
+// if #about is in the url, show the about page
+if (W.location.hash === '#about') {
+  cl.toggle(D.body, "about-visible")
+}
+
 on(t, "click", e => {
   e.preventDefault()
+  if (W.location.hash === '#about') {
+    W.location.hash = ''
+  } else {
+    W.location.hash = '#about'
+  }
   cl.toggle(D.body, "about-visible")
   return false
 })
-
