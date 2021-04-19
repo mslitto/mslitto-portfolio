@@ -14,15 +14,10 @@ const $ = (str, par) => {
   }
 }
 
-// global dom elements
-const draggableContainer = $('#draggables')
-const drag = $('.drag', draggableContainer)
-const maxZIndex = drag.length * 5
-
 // global app state
 let dragged = false
 let startPos = false
-let currentZIndex = 1
+let currentZ = 1
 
 // loop over each item and call fn(item)
 const forEach = (items, fn) => {
@@ -106,6 +101,9 @@ const onLoad = (par, tar) => {
   }
 }
 
+// global drag dom elements, children of #draggables
+const drag = $('.drag', $('#draggables'))
+
 forEach(drag, draggable => {
   const ran = M.random()
   const pos = {
@@ -181,8 +179,8 @@ const onDrag = evt => {
     top: pixelsFromPercent('Height', getPos(dragged.style.top)),
   }
 
-  currentZIndex += 1
-  dragged.style.zIndex = currentZIndex
+  currentZ += 1
+  dragged.style.zIndex = currentZ
   dragged.offset = {
     left: evt.clientX - pixelsFromPercent('Width', getPos(dragged.style.left)),
     top: evt.clientY - pixelsFromPercent('Height', getPos(dragged.style.top)),
@@ -228,12 +226,7 @@ const onMousemove = evt => {
       top: W.innerHeight - dragged.clientHeight,
     }
 
-    let newLeft = evt.clientX - dragged.offset.left
-    if (newLeft < 0) {
-      newLeft = 0
-    } else if (newLeft > max.left) {
-      newLeft = max.left
-    }
+    const newLeft = M.floor(M.max(0, M.min(evt.clientX - dragged.offset.left, max.left)))
 
     dragged.style.left = `${percentFromPixels('Width', newLeft)}%`
 
@@ -247,6 +240,7 @@ const onMousemove = evt => {
   }
 }
 
+// Initiate this app on window load
 W.onload = () => {
   forEach(drag, draggable => {
     const img = $('.bg', draggable)[0]
@@ -275,31 +269,26 @@ W.onload = () => {
   })
 }
 
-// Menu
+
+// Menu Toggler
 const menuContainer = $('.nav')[0]
 if (menuContainer) {
+  // find active menu
   const active = $('.active', menuContainer)[0]
 
-  const toggleMenu = e => {
+  // add click event handler to toggle the menu
+  on(active, 'click', e => {
     e.preventDefault()
     cl.toggle(menuContainer, 'show')
     return false
-  }
-
-  if (active) {
-    on(active, 'click', toggleMenu)
-  }
-}
-
-// About page
-const trigger = $('.about-page-trigger')[0]
-
-if (trigger) {
-  on(trigger, "click", e => {
-    e.preventDefault();
-
-    cl.toggle(D.body, "about-visible")
-
-    return false
   })
 }
+
+// About page Toggler
+const t = $('.about-page-trigger')[0]
+on(t, "click", e => {
+  e.preventDefault()
+  cl.toggle(D.body, "about-visible")
+  return false
+})
+
