@@ -1,6 +1,6 @@
 <div class="drag" style="position: absolute; left: -100%; top: -100%">
   <if condition="typeof href !== 'undefined'">
-    <a href="{{ href }}">
+    <a href="{{ href }}" target="{{ typeof target !== 'undefined' ? '_blank' : '' }}">
       <mixin name="link"></mixin>
     </a>
   </if>
